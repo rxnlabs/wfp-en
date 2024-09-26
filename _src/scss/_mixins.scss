@@ -1,0 +1,40 @@
+// List from // List from https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
+@mixin block-elements($context: '') {
+
+	#{$context} address,
+	#{$context} article,
+	#{$context} aside,
+	#{$context} blockquote,
+	#{$context} canvas,
+	#{$context} dd,
+	#{$context} div,
+	#{$context} dl,
+	#{$context} dt,
+	#{$context} fieldset,
+	#{$context} figcaption,
+	#{$context} figure,
+	#{$context} footer,
+	#{$context} h1,
+	#{$context} h2,
+	#{$context} h3,
+	#{$context} h4,
+	#{$context} h5,
+	#{$context} h6,
+	#{$context} hgroup,
+	#{$context} hr,
+	#{$context} li,
+	#{$context} main,
+	#{$context} nav,
+	#{$context} noscript,
+	#{$context} ol,
+	#{$context} output,
+	#{$context} p,
+	#{$context} pre,
+	#{$context} section,
+	#{$context} table,
+	#{$context} tfoot,
+	#{$context} ul,
+	#{$context} video {
+			@content;
+		}
+}

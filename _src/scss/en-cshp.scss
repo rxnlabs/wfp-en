@@ -1,0 +1,276 @@
+/* Overall styling for Page Builder */
+
+@import "node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "node_modules/include-media/dist/include-media";
+@import "variables";
+@import "mixins";
+
+$breakpoints: (
+	'phone': 468px,
+	'tablet': 600px,
+	'desktop': 769px,
+	'large-desktop': 1200px
+);
+
+body,
+.app-container{
+	color: #404040;
+	background-color: #353434;
+	font-size: 1.6rem;
+	font-family: 'Noto Sans', 'Montserrat', sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+// sticky footer
+.main-body {
+	flex: 1 0 auto;
+}
+
+h1 {
+	font-size: 2.8rem;
+	text-transform: none;
+}
+
+p {
+
+}
+
+.wrapper {
+	background: #353434;
+	background-size: cover;
+	padding-bottom: 159px;
+	padding-top: 30px;
+}
+.primary-header {
+	padding-bottom: 0;
+}
+
+.alignleft,
+.alignright {
+	padding: unquote('* 5px');
+	font-size: 92%;
+	text-align: center;
+
+	p {
+		margin: 0.2em 0;
+		font-style: italic;
+	}
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 0.5em 1em;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 1em 0.5em 0;
+}
+
+.aligncenter {
+	margin: 0 auto;
+}
+
+footer {
+	color: #686B6D;
+	margin-top: 50px;
+}
+
+input,
+select,
+textarea {
+	width: 100%;
+	font-size: 2.2rem;
+}
+
+p {
+	margin-top: 10px;
+}
+
+@include media('>=tablet') {
+	
+}
+
+iframe[name=google_conversion_frame] {
+	display: none;
+}
+
+strong {
+	font-weight: 700;
+}
+
+.disclaimer {
+	margin-top: 51px;
+}
+
+/* Changing error message styling - BL 10/10/2017 */
+
+.en__field__error {
+	color: #ff0000 !important;
+	font-size: 1.4rem !important;
+	font-weight: 700 !important;
+	position: absolute;
+}
+
+.en__field__label,
+.en__component--ecardblock label {
+	text-transform: uppercase;
+	color: #7b746b;
+}
+
+.en__field__label--item {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.en__field--postcode > .en__field__error {
+	font-size: 1.4rem !important;
+}
+
+/* Fixing footer links column alignment & spacing for responsiveness - BL 10/10/2017 */
+
+@media only (max-width: 1000px) and (min-width: 660px) {
+	.footer-links {
+		padding: 30px 0 !important;
+	}
+
+	.primary-footer {
+		text-align: left;
+	}
+
+	.col-sm-2.footer-links {
+		width: 25%;
+
+		br {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: 1000px) {
+	.col-sm-2.footer-links {
+		width: 16.66666667%;
+	}
+
+	.row > .col-sm-6 {
+		width: 50%;
+	}
+}
+
+/* Adjusting drop-down menu heights for IE11 - BL 10/10/2017 */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+	select.en__field__input.en__field__input--select {
+		height: 35px !important;
+	}
+}
+
+/* Fixing shifted donate button on smaller screens - BL 10/10/2017 */
+
+@media (min-width: 765px) and (max-width: 999px) {
+	.row > .col-sm-6 {
+		width: 20%;
+	}
+
+	.primary-header .nav-right {
+    	min-width: 450px;
+    }
+}
+
+/* Restyling header - BL 10/11/2017 */
+
+@media screen and (max-width: 600px) {
+	.header-links {
+		display: none;
+	}
+
+	.header-container {
+		justify-content: center;
+	}
+}
+
+/* Restyling footer - BL 10/11/2017 */
+
+.en__errorList, 
+.en__errorHeader {
+	margin-left: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+	.footer-container {
+		flex-direction: column;
+	}
+	.footer-logos, .footer-links, .footer-social, .footer-contact {
+		padding: 10px 0 10px 0;
+		text-align: center !important;
+	}
+
+	.footer-links br {
+		display: none;
+	}
+}
+
+/* Adding left margins to background blocks - BL 10/11/2017 */
+@media screen and (max-width: 1100px) {
+	.en__component--copyblock.background h1, .en__component--copyblock.background h2, .en__component--copyblock.background h3, .en__component--copyblock.background h4, .en__component--copyblock.background h5, .en__component--copyblock.background p {
+		margin-left: 20px !important;
+	}
+}
+
+#main-content-wrapper {
+	max-width: none;
+
+	#main-content {
+		margin: 0;
+	}
+
+	#main-content-inner {
+		padding: 0;
+	}
+}
+button,
+input[type="submit"],
+input[type=reset] {
+	background: transparent;
+	border: 1px solid #b0aaa1;
+	color: #b0aaa1;
+	border-radius: 2em;
+	padding: 7px 15px;
+	margin-left: 0;
+}
+
+#main-content {
+	input {
+		&[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="email"], &[type="month"], &[type="number"], &[type="password"], &[type="range"], &[type="search"], &[type="tel"], &[type="text"], &[type="time"], &[type="url"], &[type="week"] {
+			margin-bottom: 0;
+		}
+	}
+
+	textarea {
+		margin-bottom: 0;
+	}
+
+	select {
+		margin-bottom: 0;
+	}
+
+	.en__field__input--checkbox:checked + .en__field__label::before {
+		line-height: 1.4;
+	}
+}
+
+/* Engaging Network Components Styles*/
+@import "en-components";
+@import "petition";
+@import "action";
+@import "donate";
+@import "lightbox";

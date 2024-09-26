@@ -1,0 +1,144 @@
+/* Styling for petition in Page Builder */
+
+body.petition {
+	background-color: #353434;
+
+	h1 {
+		color: #fff;
+	}
+
+	@include encopy {
+
+		&.background {
+			width: 100vw;
+			position: relative;
+			left: 50%;
+			right: 50%;
+			margin-left: -50vw;
+			margin-right: -50vw;
+			background: url('https://org.salsalabs.com/o/455/images/header-mountain.jpg') no-repeat;
+			background-size: cover;
+			color: #fff;
+			margin-top: 1px;
+			padding: unquote('42px *');
+		}
+
+		padding: 20px;
+
+		// make the content in a row have a max-width of 980px
+		> * {
+			max-width: 980px;
+		}
+
+		// center ALL block level items
+		@include block-elements('>') {
+			margin: 0 auto;
+		}
+
+		p {
+			margin-top: 10px;
+		}
+
+		@include media('<tablet') {
+			margin-bottom: 0;
+		}
+	}
+
+	@include encontact {
+		max-width: 600px;
+		background-color: #fff;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	@include enform {
+		max-width: 600px;
+		background-color: #fff;
+		margin: 0 auto;
+		padding: 20px;
+		.en__submit {
+			margin-top: 40px;
+
+			button {
+				color: #FFFFFF;
+				text-align: center;
+				background-color: #899AFC;
+				width: 100%;
+			}
+		}
+
+		@include media('>tablet') {
+			display: flex;
+			flex-direction: row;
+			flex: 1;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			.en__field,
+			.en__submit {
+				width: 100%;
+			}
+
+			.en__field--firstName,
+			.en__field--lastName{
+				width: 48%;
+			}
+
+			.en__field--region,
+			.en__field--city {
+				width: 38%;
+			}
+
+			.en__field--postcode {
+				width: 20%;
+			}
+		}
+	}
+
+	select,
+	input[type=text],
+	input[type=email]{
+		color: #000;
+		background: #f3f1e4;
+		border: 1px solid #c8c8c6;
+		padding: 4px;
+		width: 100%;
+		border-radius: 3px;
+
+		&:focus {
+			background-color: #fff;
+		}
+	}
+
+	/* Moving disclaimer up - BL 10/10/2017 */
+
+	.disclaimer {
+    	margin: 0 auto;
+    	padding: 20px;
+    	max-width: 600px;
+    	background-color: #fff;
+    	margin-bottom: 20px;
+    	font-style: italic;
+		font-weight: bold;
+	}
+
+	.petition-text {
+		margin: auto;
+		max-width: 600px;
+		margin-bottom: 20px;
+		background:  rgba(0, 167, 85, 0.95);
+		color: #fff;
+		border: 1px solid #CCA;
+		font-style: italic;
+	}
+
+	@include media('>tablet') {
+		.en__field--emailAddress.next-en__field--postcode {
+			width: 70%;
+			+ .en__field--postcode {
+				width: 25%;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,123 @@
+/* Styling for Email to Target in Page Builder */
+
+body.action {
+
+	#main-content-wrapper #main-content-inner {
+		padding: 0 2em;
+		h1 {
+			font-size: 2.9rem;
+
+		}
+
+		h2 {
+			font-size: 2rem;
+		}
+
+		.en__component--copyblock
+
+		.en__ecarditems__action,
+		.en__submit {
+			text-align: center;
+
+			button {
+				padding-left: 2rem;
+				padding-right: 2rem;
+			}
+		}
+
+		.en__ecarditems__action {
+			button {
+				background: #a8b400;
+				color: #fff;
+			}
+		}
+
+		.en__submit {
+			button {
+				padding-left: 4rem;
+				padding-right: 4rem;
+				font-size: 1.1em;
+			}
+		}
+
+		.en__ecarditems__list {
+			display: grid;
+			grid-template-columns: repeat(3,1fr);
+			grid-gap: 0;
+		}
+
+		.en__ecarditems__thumb {
+			width: 100%;
+			height: auto;
+			display: block;
+			margin: 0;
+
+			img {
+				width: 100%;
+				object-fit: contain;
+				display: block;
+			}
+		}
+
+		.en__ecarditems,
+		.en__ecardmessage,
+		.en__ecardrecipients {
+			h2 {
+				text-align: center;
+			}
+		}
+
+		button {
+			width: auto;
+			display: inline-block;
+		}
+
+		.en__ecardrecipients__email, .en__ecardrecipients__name {
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+
+		.en__ecarditems__addrecipient {
+			margin-top: 2rem;
+			position: static;
+		}
+
+		.en__submit,
+		.en__ecarditems__button {
+			margin-top: 1rem;
+		}
+
+		.add-ecard-recipient {
+			text-align: right;
+		}
+
+		.en__field__label, .en__component--ecardblock label {
+				font-size: 1.3rem;
+				padding: 0;
+		}
+
+		.en__ecardrecipients__recipient {
+			position: relative;
+
+			.ecardrecipient__remove {
+				position: absolute;
+				right: -1.6rem;
+
+				button {
+					font-size: .8rem;
+					padding: .5rem;
+				}
+			}
+		}
+
+		@include media('>phone') {
+			.en__ecardrecipients__recipient {
+
+				.ecardrecipient__remove {
+					position: absolute;
+					right: 0;
+				}
+			}
+		}
+	}
+}

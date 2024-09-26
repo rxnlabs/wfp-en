@@ -1,0 +1,18 @@
+# Cornershop files
+design/
+wires/
+.sass-cache/
+backups/
+node_modules
+
+# Project Files
+*.sublime-*
+.idea/
+.ideas/
+sftp-config.json
+
+# Misc
+.DS_Store
+**/.DS_Store
+__MACOSX/
+**/__MACOSX/

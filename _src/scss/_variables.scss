@@ -1,0 +1,32 @@
+// ---------------- 02. Grid, layout & breakpoints
+// Define breakpoints
+$breakpoint-small: 600px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1200px;
+$breakpoint-x-large: 1800px;
+
+// Breakpoint groupings by devices (used by the mixins in _utilities)
+$phone:                max-width $breakpoint-small;
+$phone-landscape:      ($breakpoint-small $breakpoint-medium) (orientation landscape);
+$tablet:               $breakpoint-small $breakpoint-large;
+$tablet-landscape:     ($breakpoint-medium $breakpoint-large) (orientation landscape);
+$tablet-portrait:      ($breakpoint-small $breakpoint-medium) (orientation portrait);
+$desktop:              $breakpoint-large;
+$large-desktop:        $breakpoint-x-large;
+
+$media-expressions: (
+		'screen': 'screen',
+		'print': 'print',
+		'handheld': 'handheld',
+		'landscape': '(orientation: landscape)',
+		'portrait': '(orientation: portrait)',
+		'retina1.5x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+		'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+		'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)',
+		'min-phone': '(min-device-width: #{map_get($breakpoints, phone)}',
+		'max-phone': '(max-device-width: #{map_get($breakpoints, phone)}',
+		'min-phablet': '(min-device-width: #{map_get($breakpoints, phablet)}',
+		'max-phablet': '(max-device-width: #{map_get($breakpoints, phablet)}',
+		'min-tablet': '(min-device-width: #{map_get($breakpoints, tablet)}',
+		'max-tablet': '(max-device-width: #{map_get($breakpoints, tablet)}'
+);

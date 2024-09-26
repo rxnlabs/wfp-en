@@ -1,0 +1,94 @@
+/* Engaging Network Components Styles*/
+
+.en__component--copyblock {
+
+	// by default, add a clearfix to copy elements
+	&:not(.float) {
+		@include clearfix;
+	}
+}
+
+// by default, we're expecting the second column in a row to contain the actual form fields
+.en__component--column--2 {
+	padding: unquote('2em *');
+
+	> .en__component {
+		margin: unquote('* 2em');
+
+		@include media('>phone') {
+			margin: unquote('* 4em');
+		}
+	}
+}
+
+// by default, hide the credit card type dropdown that's required for EN forms. We're gonna use javaScript to determine the credit card tupe based on the pattern
+.en__field--paymenttype {
+	display: none;
+}
+
+.en__field__element {
+	display: block;
+}
+
+.en__field__input--select {
+	min-width: inherit!important;
+}
+
+.en__submit {
+	text-transform: uppercase;
+}
+
+.en__field__error {
+	position: static;
+}
+
+@mixin encolumn1($context: '') {
+	#{$context} .en__component--column--1 {
+		@content;
+	}
+}
+
+@mixin encolumn2($context: '') {
+	#{$context} .en__component--column--2 {
+		@content;
+	}
+}
+
+@mixin enrow1($context: '') {
+	#{$context} .en__component--row--1 {
+		@content;
+	}
+}
+
+@mixin enrow2($context: '') {
+	#{$context} .en__component--row--2 {
+		@content;
+	}
+}
+
+// styles to be applied to a Engaging Form copy block
+@mixin encopy($context: '') {
+	#{$context} .en__component--copyblock {
+		@content;
+	}
+}
+
+// styles to be applied to a Engaging Form field
+@mixin enfield($context: '') {
+	#{$context} .en__field {
+		@content;
+	}
+}
+
+// styles to be applied to a Engaging Form Block
+@mixin enform($context: '') {
+	#{$context} .en__component--formblock {
+		@content;
+	}
+}
+
+@mixin encontact($context: '') {
+	#{$context} .en__component--contactblock {
+		@content;
+	}
+}
